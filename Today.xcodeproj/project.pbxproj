@@ -36,6 +36,7 @@
 		04745C9619F2C54600275530 /* TodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04745C9B19F2C54600275530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04745C9C19F2C54600275530 /* TodayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTests.swift; sourceTree = "<group>"; };
+		04745CA619F2D98900275530 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +84,7 @@
 				04745C8D19F2C54600275530 /* Images.xcassets */,
 				04745C8F19F2C54600275530 /* LaunchScreen.xib */,
 				04745C8419F2C54600275530 /* Supporting Files */,
+				04745CA619F2D98900275530 /* MyPlayground.playground */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -405,6 +407,7 @@
 				04745CA219F2C54600275530 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04745CA319F2C54600275530 /* Build configuration list for PBXNativeTarget "TodayTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +416,7 @@
 				04745CA519F2C54600275530 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

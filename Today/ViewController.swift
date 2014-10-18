@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    var currentDay = 0
+    var currentMonth = 0
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dateFactLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
@@ -21,24 +25,51 @@ class ViewController: UIViewController {
         
         activityIndicator.hidden = true
         
+        self.currentMonth = getMont()
+        self.currentDay = getDay()
+        
+        initDate()
+        
         getRandomFact()
     }
     
+    func initDate() {
+        
+        let date = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        let dateString = dateFormatter.stringFromDate(date)
+        
+        self.dateLabel.text = "Today is \(dateString)"
+        
+    }
+    
     func getMont() -> Int {
-        return 10
+        
+        let flags: NSCalendarUnit = .MonthCalendarUnit
+        let date = NSDate()
+        let components = NSCalendar.currentCalendar().components(flags, fromDate: date)
+        
+        let month = components.month
+        
+        return month
     }
     
     func getDay() -> Int {
-        return 18
+        
+        let flags: NSCalendarUnit = .DayCalendarUnit
+        let date = NSDate()
+        let components = NSCalendar.currentCalendar().components(flags, fromDate: date)
+        
+        let day = components.day
+        
+        return day
     }
     
     
     func getRandomFact() -> Void {
         
-        let month = self.getMont()
-        let day = self.getDay()
-        
-        let numbersURL = NSURL(string: "http://numbersapi.com/\(month)/\(day)/date?json")
+        let numbersURL = NSURL(string: "http://numbersapi.com/\(self.currentMonth)/\(self.currentDay)/date?json")
         
         let sharedSession = NSURLSession.sharedSession()
         let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(numbersURL, completionHandler: { (location:NSURL!, response:NSURLResponse!, error:NSError!) -> Void in
